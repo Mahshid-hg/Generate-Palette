@@ -1,0 +1,128 @@
+/* basic reset */
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #83a8df, #c3cfe2);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 1000px;
+    padding: 2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    color: #333;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #667eea;
+    width: 50%;
+    height: 3px;
+    border-radius: 2px;
+}
+
+#generate-btn {
+    border: none;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+}
+
+#generate-btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(102, 126, 234, 0.3);
+}
+
+/* the moment that user clicks on the button */
+#generate-btn:active{
+    transform: translateY(0px);
+}
+
+/* learning display: grid then*/
+.palette-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.color-box{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 150px;
+    height: 190px;
+}
+
+.color-box:hover{
+    transform: translateY(-5px);
+}
+
+.color{
+    height: 78%;
+    cursor: pointer;
+}
+
+.color-info{
+    padding: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    font-size: 0.9rem;
+}
+
+.hex-value{
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.color-info i{
+    cursor: pointer;
+    color: #64748b;
+    transition: color 0.2s;
+}
+
+.color-info i:hover{
+    color: #667eea;
+}
+
+/*being responsive */
+@media (max-width: 980px){
+    .color-box{
+        width: 120px;
+        height: 140px;
+    }
+}
